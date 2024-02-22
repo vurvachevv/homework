@@ -2,11 +2,10 @@ import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
-parser = argparse.ArgumentParser()
 
+parser = argparse.ArgumentParser()
 parser.add_argument('month', type=str)
 parser.add_argument('year', type=str)
-
 args = parser.parse_args()
 month = args.month
 year = args.year
