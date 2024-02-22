@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import argparse
 parser = argparse.ArgumentParser()
 
-parser.add_argument('number1', type=str)
-parser.add_argument('number2', type=str)
+parser.add_argument('month', type=str)
+parser.add_argument('year', type=str)
 
 args = parser.parse_args()
-month = args.number1
-year = args.number2
+month = args.month
+year = args.year
 
 
 
