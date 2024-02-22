@@ -11,19 +11,10 @@ args = parser.parse_args()
 month = args.month
 year = args.year
 
-
-
-
-
 outcome_data = pd.read_excel(rf"C:\Users\vurva\Downloads\outcome_{month}.{year}.xlsx")
-
-
-
 outcome_data["День"] = [int(x.split()[0]) for x in outcome_data["Дата"]]
 
-
 fig, ax = plt.subplots(constrained_layout=True)
-
 sns.lineplot(
     data = outcome_data,
     x = "День",
@@ -31,10 +22,9 @@ sns.lineplot(
     hue = "Категория",
     ax = ax
 )
+
 ax.legend()
 plt.show()
-
-
 
 fig, ax = plt.subplots(constrained_layout=True)
 sns.barplot(
@@ -47,5 +37,6 @@ sns.barplot(
     errorbar = None,
     ax = ax
 )
+
 plt.title(f"{month}.{year}.", fontdict={'fontname': 'sans-serif', 'fontsize': 10})
 plt.show()
