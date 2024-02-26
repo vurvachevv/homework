@@ -10,6 +10,16 @@ args = parser.parse_args()
 month = args.month
 year = args.year
 
+#проверка введенного месяца
+if month not in ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]:
+    if year not in [str(x) for x in range(1960, 2024 + 1)]:
+        print("Введен неправильный год!")
+    print("Введен неправильный месяц!")
+    exit()
+if year not in [str(x) for x in range(1960, 2024 + 1)]:
+    print("Введен неправильный год!")
+    exit()
+
 outcome_data = pd.read_excel(rf"C:\Users\vurva\Downloads\outcome_{month}.{year}.xlsx")
 outcome_data["День"] = [int(x.split()[0]) for x in outcome_data["Дата"]]
 
